@@ -968,7 +968,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/"><Home mainData={mainData} /></Route>
-        <Route exact path="/sprint/:id"><Sprint/></Route>
+        <Route exact path="/sprint/:id"><Sprint mainData={mainData} /></Route>
       </Switch>
     </Router>
   )
