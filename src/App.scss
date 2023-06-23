@@ -5,6 +5,10 @@
 }
 
 .navBar {
+    >a{
+        text-decoration: none;
+        color: #000;
+    }
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -67,6 +71,7 @@
         justify-content: center;
         color: #fff;
         gap: 14px;
+        transition: 0.3s all ease-in-out;
     }
 
     .flexContainer {
@@ -99,7 +104,32 @@
                 position: absolute;
                 top: 10px;
                 right: 10px;
+                padding: 2px;
             }
         }
+    }
+}
+
+
+
+
+
+
+.newSprintAnimation{
+    animation-name: newSprintAnimation;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-duration: 0.5s;
+}
+
+
+@keyframes newSprintAnimation {
+    from{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.91);
+    }
+    to{
+        transform: scale(1);
     }
 }

@@ -8,958 +8,962 @@ import {
   Link
 } from "react-router-dom";
 import Sprint from './components/Sprint';
+import { useState , memo } from 'react';
 
 
 function App() {
 
+  console.log("App render")
 
-  let mainData = [
-    {
-      id: 1,
-      dataCells: [
+  const [mainData, setMainData] = useState(
+    [
         {
-          title: "Corporate overhead",
-          inputs: [
+          id: 1,
+          dataCells: [
             {
-              id: 1,
-              name: "Standups",
-              value: 0
+              title: "Corporate overhead",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Standups",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Planning",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Refinement",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Chapter sync",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Digər görüşlər",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Təlim",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Şəxsi ehtiyaclar",
+                  value: 0
+                }
+              ]
             },
             {
-              id: 2,
-              name: "Planning",
-              value: 0
+              title: "Unplanned time",
+              inputs: [
+                {
+                  id: 1,
+                  name: "İclaslar",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Sorğular",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "İcazələr",
+                  value: 0
+                }
+              ]
             },
             {
-              id: 3,
-              name: "Refinement",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Chapter sync",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Digər görüşlər",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Təlim",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Şəxsi ehtiyaclar",
-              value: 0
+              title: "Tasks",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Task 1",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Task 2",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Task 3",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Task 4",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Task 5",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Task 6",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Task 7",
+                  value: 0
+                }
+              ]
             }
           ]
         },
         {
-          title: "Unplanned time",
-          inputs: [
+          id: 2,
+          dataCells: [
             {
-              id: 1,
-              name: "İclaslar",
-              value: 0
+              title: "Corporate overhead",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Standups",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Planning",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Refinement",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Chapter sync",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Digər görüşlər",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Təlim",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Şəxsi ehtiyaclar",
+                  value: 0
+                }
+              ]
             },
             {
-              id: 2,
-              name: "Sorğular",
-              value: 0
+              title: "Unplanned time",
+              inputs: [
+                {
+                  id: 1,
+                  name: "İclaslar",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Sorğular",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "İcazələr",
+                  value: 0
+                }
+              ]
             },
             {
-              id: 3,
-              name: "İcazələr",
-              value: 0
+              title: "Tasks",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Task 1",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Task 2",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Task 3",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Task 4",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Task 5",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Task 6",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Task 7",
+                  value: 0
+                }
+              ]
             }
           ]
         },
         {
-          title: "Tasks",
-          inputs: [
+          id: 3,
+          dataCells: [
             {
-              id: 1,
-              name: "Task 1",
-              value: 0
+              title: "Corporate overhead",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Standups",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Planning",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Refinement",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Chapter sync",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Digər görüşlər",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Təlim",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Şəxsi ehtiyaclar",
+                  value: 0
+                }
+              ]
             },
             {
-              id: 2,
-              name: "Task 2",
-              value: 0
+              title: "Unplanned time",
+              inputs: [
+                {
+                  id: 1,
+                  name: "İclaslar",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Sorğular",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "İcazələr",
+                  value: 0
+                }
+              ]
             },
             {
-              id: 3,
-              name: "Task 3",
-              value: 0
+              title: "Tasks",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Task 1",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Task 2",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Task 3",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Task 4",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Task 5",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Task 6",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Task 7",
+                  value: 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 4,
+          dataCells: [
+            {
+              title: "Corporate overhead",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Standups",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Planning",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Refinement",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Chapter sync",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Digər görüşlər",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Təlim",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Şəxsi ehtiyaclar",
+                  value: 0
+                }
+              ]
             },
             {
-              id: 4,
-              name: "Task 4",
-              value: 0
+              title: "Unplanned time",
+              inputs: [
+                {
+                  id: 1,
+                  name: "İclaslar",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Sorğular",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "İcazələr",
+                  value: 0
+                }
+              ]
             },
             {
-              id: 5,
-              name: "Task 5",
-              value: 0
+              title: "Tasks",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Task 1",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Task 2",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Task 3",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Task 4",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Task 5",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Task 6",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Task 7",
+                  value: 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 5,
+          dataCells: [
+            {
+              title: "Corporate overhead",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Standups",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Planning",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Refinement",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Chapter sync",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Digər görüşlər",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Təlim",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Şəxsi ehtiyaclar",
+                  value: 0
+                }
+              ]
             },
             {
-              id: 6,
-              name: "Task 6",
-              value: 0
+              title: "Unplanned time",
+              inputs: [
+                {
+                  id: 1,
+                  name: "İclaslar",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Sorğular",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "İcazələr",
+                  value: 0
+                }
+              ]
             },
             {
-              id: 7,
-              name: "Task 7",
-              value: 0
+              title: "Tasks",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Task 1",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Task 2",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Task 3",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Task 4",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Task 5",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Task 6",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Task 7",
+                  value: 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 6,
+          dataCells: [
+            {
+              title: "Corporate overhead",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Standups",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Planning",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Refinement",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Chapter sync",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Digər görüşlər",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Təlim",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Şəxsi ehtiyaclar",
+                  value: 0
+                }
+              ]
+            },
+            {
+              title: "Unplanned time",
+              inputs: [
+                {
+                  id: 1,
+                  name: "İclaslar",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Sorğular",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "İcazələr",
+                  value: 0
+                }
+              ]
+            },
+            {
+              title: "Tasks",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Task 1",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Task 2",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Task 3",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Task 4",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Task 5",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Task 6",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Task 7",
+                  value: 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 7,
+          dataCells: [
+            {
+              title: "Corporate overhead",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Standups",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Planning",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Refinement",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Chapter sync",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Digər görüşlər",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Təlim",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Şəxsi ehtiyaclar",
+                  value: 0
+                }
+              ]
+            },
+            {
+              title: "Unplanned time",
+              inputs: [
+                {
+                  id: 1,
+                  name: "İclaslar",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Sorğular",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "İcazələr",
+                  value: 0
+                }
+              ]
+            },
+            {
+              title: "Tasks",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Task 1",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Task 2",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Task 3",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Task 4",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Task 5",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Task 6",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Task 7",
+                  value: 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 8,
+          dataCells: [
+            {
+              title: "Corporate overhead",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Standups",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Planning",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Refinement",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Chapter sync",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Digər görüşlər",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Təlim",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Şəxsi ehtiyaclar",
+                  value: 0
+                }
+              ]
+            },
+            {
+              title: "Unplanned time",
+              inputs: [
+                {
+                  id: 1,
+                  name: "İclaslar",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Sorğular",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "İcazələr",
+                  value: 0
+                }
+              ]
+            },
+            {
+              title: "Tasks",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Task 1",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Task 2",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Task 3",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Task 4",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Task 5",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Task 6",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Task 7",
+                  value: 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 9,
+          dataCells: [
+            {
+              title: "Corporate overhead",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Standups",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Planning",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Refinement",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Chapter sync",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Digər görüşlər",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Təlim",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Şəxsi ehtiyaclar",
+                  value: 0
+                }
+              ]
+            },
+            {
+              title: "Unplanned time",
+              inputs: [
+                {
+                  id: 1,
+                  name: "İclaslar",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Sorğular",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "İcazələr",
+                  value: 0
+                }
+              ]
+            },
+            {
+              title: "Tasks",
+              inputs: [
+                {
+                  id: 1,
+                  name: "Task 1",
+                  value: 0
+                },
+                {
+                  id: 2,
+                  name: "Task 2",
+                  value: 0
+                },
+                {
+                  id: 3,
+                  name: "Task 3",
+                  value: 0
+                },
+                {
+                  id: 4,
+                  name: "Task 4",
+                  value: 0
+                },
+                {
+                  id: 5,
+                  name: "Task 5",
+                  value: 0
+                },
+                {
+                  id: 6,
+                  name: "Task 6",
+                  value: 0
+                },
+                {
+                  id: 7,
+                  name: "Task 7",
+                  value: 0
+                }
+              ]
             }
           ]
         }
       ]
-    },
-    {
-      id: 2,
-      dataCells: [
-        {
-          title: "Corporate overhead",
-          inputs: [
-            {
-              id: 1,
-              name: "Standups",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Planning",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Refinement",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Chapter sync",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Digər görüşlər",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Təlim",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Şəxsi ehtiyaclar",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Unplanned time",
-          inputs: [
-            {
-              id: 1,
-              name: "İclaslar",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Sorğular",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "İcazələr",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Tasks",
-          inputs: [
-            {
-              id: 1,
-              name: "Task 1",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Task 2",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Task 3",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Task 4",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Task 5",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Task 6",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Task 7",
-              value: 0
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 3,
-      dataCells: [
-        {
-          title: "Corporate overhead",
-          inputs: [
-            {
-              id: 1,
-              name: "Standups",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Planning",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Refinement",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Chapter sync",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Digər görüşlər",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Təlim",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Şəxsi ehtiyaclar",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Unplanned time",
-          inputs: [
-            {
-              id: 1,
-              name: "İclaslar",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Sorğular",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "İcazələr",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Tasks",
-          inputs: [
-            {
-              id: 1,
-              name: "Task 1",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Task 2",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Task 3",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Task 4",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Task 5",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Task 6",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Task 7",
-              value: 0
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 4,
-      dataCells: [
-        {
-          title: "Corporate overhead",
-          inputs: [
-            {
-              id: 1,
-              name: "Standups",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Planning",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Refinement",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Chapter sync",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Digər görüşlər",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Təlim",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Şəxsi ehtiyaclar",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Unplanned time",
-          inputs: [
-            {
-              id: 1,
-              name: "İclaslar",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Sorğular",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "İcazələr",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Tasks",
-          inputs: [
-            {
-              id: 1,
-              name: "Task 1",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Task 2",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Task 3",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Task 4",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Task 5",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Task 6",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Task 7",
-              value: 0
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 5,
-      dataCells: [
-        {
-          title: "Corporate overhead",
-          inputs: [
-            {
-              id: 1,
-              name: "Standups",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Planning",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Refinement",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Chapter sync",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Digər görüşlər",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Təlim",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Şəxsi ehtiyaclar",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Unplanned time",
-          inputs: [
-            {
-              id: 1,
-              name: "İclaslar",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Sorğular",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "İcazələr",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Tasks",
-          inputs: [
-            {
-              id: 1,
-              name: "Task 1",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Task 2",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Task 3",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Task 4",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Task 5",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Task 6",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Task 7",
-              value: 0
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 6,
-      dataCells: [
-        {
-          title: "Corporate overhead",
-          inputs: [
-            {
-              id: 1,
-              name: "Standups",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Planning",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Refinement",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Chapter sync",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Digər görüşlər",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Təlim",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Şəxsi ehtiyaclar",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Unplanned time",
-          inputs: [
-            {
-              id: 1,
-              name: "İclaslar",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Sorğular",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "İcazələr",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Tasks",
-          inputs: [
-            {
-              id: 1,
-              name: "Task 1",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Task 2",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Task 3",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Task 4",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Task 5",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Task 6",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Task 7",
-              value: 0
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 7,
-      dataCells: [
-        {
-          title: "Corporate overhead",
-          inputs: [
-            {
-              id: 1,
-              name: "Standups",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Planning",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Refinement",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Chapter sync",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Digər görüşlər",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Təlim",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Şəxsi ehtiyaclar",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Unplanned time",
-          inputs: [
-            {
-              id: 1,
-              name: "İclaslar",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Sorğular",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "İcazələr",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Tasks",
-          inputs: [
-            {
-              id: 1,
-              name: "Task 1",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Task 2",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Task 3",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Task 4",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Task 5",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Task 6",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Task 7",
-              value: 0
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 8,
-      dataCells: [
-        {
-          title: "Corporate overhead",
-          inputs: [
-            {
-              id: 1,
-              name: "Standups",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Planning",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Refinement",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Chapter sync",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Digər görüşlər",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Təlim",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Şəxsi ehtiyaclar",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Unplanned time",
-          inputs: [
-            {
-              id: 1,
-              name: "İclaslar",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Sorğular",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "İcazələr",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Tasks",
-          inputs: [
-            {
-              id: 1,
-              name: "Task 1",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Task 2",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Task 3",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Task 4",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Task 5",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Task 6",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Task 7",
-              value: 0
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 9,
-      dataCells: [
-        {
-          title: "Corporate overhead",
-          inputs: [
-            {
-              id: 1,
-              name: "Standups",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Planning",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Refinement",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Chapter sync",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Digər görüşlər",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Təlim",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Şəxsi ehtiyaclar",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Unplanned time",
-          inputs: [
-            {
-              id: 1,
-              name: "İclaslar",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Sorğular",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "İcazələr",
-              value: 0
-            }
-          ]
-        },
-        {
-          title: "Tasks",
-          inputs: [
-            {
-              id: 1,
-              name: "Task 1",
-              value: 0
-            },
-            {
-              id: 2,
-              name: "Task 2",
-              value: 0
-            },
-            {
-              id: 3,
-              name: "Task 3",
-              value: 0
-            },
-            {
-              id: 4,
-              name: "Task 4",
-              value: 0
-            },
-            {
-              id: 5,
-              name: "Task 5",
-              value: 0
-            },
-            {
-              id: 6,
-              name: "Task 6",
-              value: 0
-            },
-            {
-              id: 7,
-              name: "Task 7",
-              value: 0
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  )
 
 
 
@@ -967,11 +971,11 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route exact path="/"><Home mainData={mainData} /></Route>
+        <Route exact path="/"><Home mainData={mainData} setMainData={setMainData} /></Route>
         <Route exact path="/sprint/:id"><Sprint mainData={mainData} /></Route>
       </Switch>
     </Router>
   )
 }
 
-export default App
+export default memo(App)

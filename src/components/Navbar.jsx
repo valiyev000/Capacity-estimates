@@ -1,4 +1,5 @@
 import {memo} from 'react'
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
 
 function Navbar() {
 
@@ -6,7 +7,7 @@ function Navbar() {
     
     return (
         <nav className='navBar'>
-            <h2 className="brandName">BrandName</h2>
+            <NavLink to="/"><h2 className="brandName">BrandName</h2></NavLink>
             <div className="personal">
                 <div className="avatar"></div>
                 <div className="userName">Agabey Valiyev</div>
