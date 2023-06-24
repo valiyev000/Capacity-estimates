@@ -28,6 +28,18 @@ export default function Sprint({ mainData, setMainData }) {
   //   },
   // });
 
+  const firstFormValues = {}
+
+  dataCells.forEach((e,i) => {
+    console.log(e) //todo bezi yoxlamalar
+  });
+
+
+  const firstForm = useFormik({
+    initialValues: {
+      firstName: '' //todo helelik yazilib
+    }
+  });
 
 
 
