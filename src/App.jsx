@@ -972,7 +972,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/"><Home mainData={mainData} setMainData={setMainData} /></Route>
-        <Route exact path="/sprint/:id"><Sprint mainData={mainData} /></Route>
+        <Route exact path="/sprint/:id"><Sprint mainData={mainData} setMainData={setMainData} /></Route>
       </Switch>
     </Router>
   )

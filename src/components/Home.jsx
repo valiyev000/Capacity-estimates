@@ -8,7 +8,6 @@ import calendarIcon from '../assets/calendarIcon.svg'
 function Home({ mainData, setMainData }) {
 
     console.log("Home render")
-    // console.log(mainData)
 
     function newSprint(e) {
 
@@ -121,7 +120,7 @@ function Home({ mainData, setMainData }) {
                 ]
             }
         ])
-        console.log(e.target)
+        // console.log(e.target)
         e.target.classList.add("newSprintAnimation")
         setTimeout(() => {
             e.target.classList.remove("newSprintAnimation")
