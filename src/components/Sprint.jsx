@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import { LuSettings2 } from "react-icons/lu";
 import { useFormik } from 'formik';
@@ -28,16 +28,23 @@ export default function Sprint({ mainData, setMainData }) {
   //   },
   // });
 
+  useEffect(()=>{
+
+
+    
+  },[])
+
   const firstFormValues = {}
 
-  dataCells.forEach((e,i) => {
-    console.log(e) //todo bezi yoxlamalar
+  dataCells[0].inputs.forEach((e, i) => {
+    firstFormValues[e.name] = e.value
   });
-
+  console.log(firstFormValues) //todo burda qalmisdim
 
   const firstForm = useFormik({
-    initialValues: {
-      firstName: '' //todo helelik yazilib
+    initialValues: firstFormValues,
+    onSubmit: (val) => {
+      console.log(val)
     }
   });
 
@@ -48,7 +55,7 @@ export default function Sprint({ mainData, setMainData }) {
     event.inputs.push(
       {
         id: event.inputs.length + 1,
-        name: "New input",
+        name: `New input ${event.inputs.length + 1}`,
         value: 0
       }
     )
